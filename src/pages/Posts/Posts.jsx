@@ -2,7 +2,7 @@ import React from "react";
 import { useFetch } from "../../hooks/useFetch";
 import { useNavigate } from "react-router-dom";
 import ProductSkeleton from "../../components/Skeleton";
-import PostsView from "./POstsView";
+import PostsView from "./PostsView";
 
 const Posts = () => {
   const { data = [], loading, error } = useFetch("posts?_limit=15");
