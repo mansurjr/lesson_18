@@ -1,7 +1,7 @@
 export const NAVBAR_MENU = [
   { name: "Home", link: "/" },
-  { name: "User", link: "/user" },
-  { name: "Login", link: "/login" },
+  { name: "Posts", link: "/posts" },
+  { name: "Sign Up", link: "/signup" },
 ];
 
 export const months = [
@@ -10,7 +10,7 @@ export const months = [
   "Mar",
   "Apr",
   "May",
-  "Jun",
+  "Jun",  
   "Jul",
   "Aug",
   "Sep",

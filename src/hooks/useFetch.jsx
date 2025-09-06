@@ -11,7 +11,6 @@ export const useFetch = (url) => {
       try {
         const res = await api.get(url);
         setData(res.data);
-        localStorage.setItem("users", JSON.stringify(res.data));
       } catch (err) {
         setError(err.message || "Something went wrong");
       } finally {
