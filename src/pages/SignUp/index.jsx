@@ -19,6 +19,7 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setFormData(formType);
     console.log("Form submitted:", formData);
   };
 
@@ -31,6 +32,7 @@ const SignUp = () => {
       <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-md">
         <h1 className="text-2xl font-bold text-center">Create a new account</h1>
         <p className="text-center text-gray-600 mb-4">It’s quick and easy.</p>
+
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="flex gap-2">
             <input
@@ -39,7 +41,7 @@ const SignUp = () => {
               value={formData.firstName}
               onChange={handleChange}
               placeholder="First name"
-              className="w-1/2 border rounded p-2 text-sm"
+              className="w-1/2 border border-gray-300 rounded p-2 text-sm"
             />
             <input
               type="text"
@@ -47,27 +49,9 @@ const SignUp = () => {
               value={formData.lastName}
               onChange={handleChange}
               placeholder="Last name"
-              className="w-1/2 border rounded p-2 text-sm"
+              className="w-1/2 border border-gray-300 rounded p-2 text-sm"
             />
           </div>
-
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Mobile number or email"
-            className="w-full border rounded p-2 text-sm"
-          />
-
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            placeholder="New password"
-            className="w-full border rounded p-2 text-sm"
-          />
 
           <div>
             <label className="text-xs text-gray-600">Birthday</label>
@@ -76,7 +60,7 @@ const SignUp = () => {
                 name="day"
                 value={formData.day}
                 onChange={handleChange}
-                className="w-1/3 border rounded p-2 text-sm">
+                className="w-1/3 border border-gray-300 rounded p-2 text-sm">
                 <option value="">Day</option>
                 {Array.from({ length: 31 }, (_, i) => (
                   <option key={i + 1} value={i + 1}>
@@ -84,11 +68,12 @@ const SignUp = () => {
                   </option>
                 ))}
               </select>
+
               <select
                 name="month"
                 value={formData.month}
                 onChange={handleChange}
-                className="w-1/3 border rounded p-2 text-sm">
+                className="w-1/3 border border-gray-300 rounded p-2 text-sm">
                 <option value="">Month</option>
                 {months.map((m, i) => (
                   <option key={i} value={i + 1}>
@@ -96,11 +81,12 @@ const SignUp = () => {
                   </option>
                 ))}
               </select>
+
               <select
                 name="year"
                 value={formData.year}
                 onChange={handleChange}
-                className="w-1/3 border rounded p-2 text-sm">
+                className="w-1/3 border border-gray-300 rounded p-2 text-sm">
                 <option value="">Year</option>
                 {Array.from({ length: 100 }, (_, i) => {
                   const year = new Date().getFullYear() - i;
@@ -120,7 +106,7 @@ const SignUp = () => {
               {["Female", "Male", "Custom"].map((g) => (
                 <label
                   key={g}
-                  className="flex items-center gap-1 border rounded p-2 w-1/3 text-sm">
+                  className="flex items-center gap-1 border border-gray-300 rounded p-2 w-1/3 text-sm">
                   <input
                     type="radio"
                     name="gender"
@@ -133,6 +119,24 @@ const SignUp = () => {
               ))}
             </div>
           </div>
+
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Mobile number or email"
+            className="w-full border border-gray-300 rounded p-2 text-sm"
+          />
+
+          <input
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            placeholder="New password"
+            className="w-full border border-gray-300 rounded p-2 text-sm"
+          />
 
           <p className="text-xs text-gray-500">
             By clicking Sign Up, you agree to our Terms, Privacy Policy and
